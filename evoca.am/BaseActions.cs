@@ -52,6 +52,11 @@ namespace evoca.am
             Click(by);
             driver.FindElement(by).SendKeys(text);
         }
+
+        //public virtual void ClickElement (IWebElement element)
+        //{
+        //    driver.FindElement(element).Click();
+        //}
     }
 
     //public class Actions : BaseActions

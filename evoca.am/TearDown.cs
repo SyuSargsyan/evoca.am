@@ -8,17 +8,10 @@ using OpenQA.Selenium;
 
 namespace evoca.am
 {
-    public class TearDown : Methods
+    internal class TearDown
     {
-        public TearDown(IWebDriver driver) : base(driver)
-        {
-        }
+  
 
-        [TearDown]
-       public void tearDownMethod ()
-        {
-           driver.Close();
-        }
-        
+   
     }
 }

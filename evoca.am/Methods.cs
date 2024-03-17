@@ -1,4 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework.Internal.Commands;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using System.Collections;
+using System.Security.Cryptography.X509Certificates;
 
 namespace evoca.am
 {
@@ -32,6 +36,21 @@ namespace evoca.am
 
 
         }
-
+        public void cardmenu()
+        {
+            IWebElement listiku = driver.FindElement(listik);
+            IList<IWebElement> listof = listiku.FindElements(By.TagName("li"));
+            IWebElement card = listof[1];
+            card.Click();
+            //driver.FindElement((By)card).Click();
+        //Click(card);
+            Actions action = new Actions(driver);
+            IWebElement element = driver.FindElement(mc);
+            action.MoveToElement((IWebElement)element).Perform();
+            //action.DragAndDropToOffset(element);
+            //action.MoveToLocation(IWebElement)element);
+            action.ContextClick(element).Perform();
+            
+        }
     }
 }
