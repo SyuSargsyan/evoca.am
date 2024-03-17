@@ -1,11 +1,4 @@
-﻿using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using evoca.am.data;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace evoca.am
 {
@@ -20,9 +13,18 @@ namespace evoca.am
             //Actions actions = new Actions(driver);
             //actions.Click(instancePaymentButton);
             Click(instancePaymentButton);
+            //Thread.Sleep(10000);
+            driver.SwitchTo().Window((driver.WindowHandles[1]));
+            wait.Until(e => e.FindElement(evocabankPaymentButton));
             Click(evocabankPaymentButton);
-            Assert.Pass();
-
+            //Thread.Sleep(10000);
+            wait.Until(e => e.FindElement(loanRepaymentButton));
+            Click(loanRepaymentButton);
+            //Assert.Pass();
+            //Assert.IsTrue(driver.FindElement(loanRepaymentButton).Displayed);
+            //string ass = "Վարկի մարում";
+            //var but = driver.FindElement(loanRepaymentButton).Text;
+            //Assert.AreEqual(ass, but);
             
             //actions.Click(instancePaymentButton);
             //BaseActions baseActions = new BaseActions(driver);

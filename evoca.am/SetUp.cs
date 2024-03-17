@@ -19,7 +19,7 @@ namespace evoca.am
 
             var driver = new ChromeDriver();
             methods = new Methods(driver);
-            methods.wait = new WebDriverWait(driver, methods.timeout);
+            methods.wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
             Url.currentUrl = Url.liveUrl;
             driver.Navigate().GoToUrl(Url.currentUrl.urlValue);
             driver.Manage().Window.Maximize();
