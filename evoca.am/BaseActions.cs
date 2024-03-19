@@ -43,6 +43,7 @@ namespace evoca.am
 
         public virtual void Click(By by)
         {
+            wait.Until(e => e.FindElement(by));
             driver.FindElement(by).Click();
 
         }

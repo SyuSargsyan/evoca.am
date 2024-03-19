@@ -4,14 +4,14 @@ namespace evoca.am
     { 
 
         [Test]
-        public void Test1()
+        public void loanEarlyRepaymentFunctionalityTest()
         {
-            methods.TestCasesmethods();
+            methods.loanEarlyRepaymentFunctionality();
         }
         [Test]
         public void Test2()
         {
-            methods.cardmenu();
+            methods.loanRepaymentFunctionality();
         }
     }
 }

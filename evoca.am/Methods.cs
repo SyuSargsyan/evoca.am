@@ -1,4 +1,5 @@
-﻿using NUnit.Framework.Internal.Commands;
+﻿using evoca.am.data;
+using NUnit.Framework.Internal.Commands;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System.Collections;
@@ -12,47 +13,48 @@ namespace evoca.am
         {
         }
 
-        public void TestCasesmethods()
+        public void loanEarlyRepaymentFunctionality()
         {
-            //Actions actions = new Actions(driver);
-            //actions.Click(instancePaymentButton);
             Click(instancePaymentButton);
             Thread.Sleep(10000);
-            driver.SwitchTo().Window((driver.WindowHandles[0]));
-            wait.Until(e => e.FindElement(instancePaymentButton));
-            Assert.IsTrue(driver.FindElement(instancePaymentButton).Displayed);
-            //Click(evocabankPaymentButton);
-            //Thread.Sleep(10000);
-            //wait.Until(e => e.FindElement(loanRepaymentButton));
-            //Click(loanRepaymentButton);
-         
-            //Assert.Pass();
-            //Assert.IsTrue(driver.FindElement(loanRepaymentButton).Displayed);
-            //string ass = "Վարկի մարում";
-            //var but = driver.FindElement(loanRepaymentButton).Text;
-            //Assert.AreEqual(ass, but);
-            
-            //actions.Click(instancePaymentButton);
-            //BaseActions baseActions = new BaseActions(driver);
-            //baseActions.Click(instancePaymentButton);
-
-
+            driver.SwitchTo().Window((driver.WindowHandles[1]));
+            Click(evocabankPaymentButton);
+            Click(loanRepaymentButton);
+            Click(loanEarlyRepaymentButton);
+            SendKey(loanEarlyAggrementInput,Loan.testLoan.LoanContract);
+            Click(continueLoanEarlyPayment);
+            string expectedResult = "Վարկի մայր գումարի վաղաժամկետ մարում";
+            string actualResult = driver.FindElement(actualResOfLoanPayment).Text;
+            Assert.AreEqual(expectedResult, actualResult);  
         }
-        public void cardmenu()
+        public void loanRepaymentFunctionality()
         {
-            IWebElement listiku = driver.FindElement(listik);
-            IList<IWebElement> listof = listiku.FindElements(By.TagName("li"));
-            IWebElement card = listof[1];
-            card.Click();
-            //driver.FindElement((By)card).Click();
-        //Click(card);
-            Actions action = new Actions(driver);
-            IWebElement element = driver.FindElement(mc);
-            action.MoveToElement((IWebElement)element).Perform();
-            //action.DragAndDropToOffset(element);
-            //action.MoveToLocation(IWebElement)element);
-            action.ContextClick(element).Perform();
-            
+            Click(instancePaymentButton);
+            Thread.Sleep(10000);
+            driver.SwitchTo().Window((driver.WindowHandles[1]));
+            Click(evocabankPaymentButton);
+            Click(loanRepaymentButton);
+            Click(redularRepaymentButton);
+            SendKey(loanRegularAggrementInput, Loan.testLoan.LoanContract);
+            Click(continueLoanRegularPayment);
+
+
+
+
+
+            //    IWebElement listiku = driver.FindElement(listik);
+            //    IList<IWebElement> listof = listiku.FindElements(By.TagName("li"));
+            //    IWebElement card = listof[1];
+            //    card.Click();
+            //    //driver.FindElement((By)card).Click();
+            ////Click(card);
+            //    Actions action = new Actions(driver);
+            //    IWebElement element = driver.FindElement(mc);
+            //    action.MoveToElement((IWebElement)element).Perform();
+            //    //action.DragAndDropToOffset(element);
+            //    //action.MoveToLocation(IWebElement)element);
+            //    action.ContextClick(element).Perform();
+
         }
     }
 }

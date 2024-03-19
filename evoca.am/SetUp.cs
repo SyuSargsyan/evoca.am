@@ -21,17 +21,18 @@ namespace evoca.am
 
             driver = new ChromeDriver();
             methods = new Methods(driver);
-            methods.wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            methods.wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
             Url.currentUrl = Url.liveUrl;
+            Loan.testLoan = Loan.syuLoan;
             driver.Navigate().GoToUrl(Url.currentUrl.urlValue);
             driver.Manage().Window.Maximize();
         }
 
-        [TearDown]
-        public void tearDownMethod()
-        {
-            driver.Quit();
-        }
+        //[TearDown]
+        //public void tearDownMethod()
+        //{
+        //    driver.Quit();
+        //}
 
     }
 }
