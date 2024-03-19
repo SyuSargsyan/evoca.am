@@ -30,7 +30,7 @@ namespace evoca.am
         [TearDown]
         public void tearDownMethod()
         {
-            driver.Close();
+            driver.Quit();
         }
 
     }

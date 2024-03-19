@@ -17,13 +17,15 @@ namespace evoca.am
             //Actions actions = new Actions(driver);
             //actions.Click(instancePaymentButton);
             Click(instancePaymentButton);
+            Thread.Sleep(10000);
+            driver.SwitchTo().Window((driver.WindowHandles[0]));
+            wait.Until(e => e.FindElement(instancePaymentButton));
+            Assert.IsTrue(driver.FindElement(instancePaymentButton).Displayed);
+            //Click(evocabankPaymentButton);
             //Thread.Sleep(10000);
-            driver.SwitchTo().Window((driver.WindowHandles[1]));
-            wait.Until(e => e.FindElement(evocabankPaymentButton));
-            Click(evocabankPaymentButton);
-            //Thread.Sleep(10000);
-            wait.Until(e => e.FindElement(loanRepaymentButton));
-            Click(loanRepaymentButton);
+            //wait.Until(e => e.FindElement(loanRepaymentButton));
+            //Click(loanRepaymentButton);
+         
             //Assert.Pass();
             //Assert.IsTrue(driver.FindElement(loanRepaymentButton).Displayed);
             //string ass = "Վարկի մարում";
