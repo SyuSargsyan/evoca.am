@@ -9,9 +9,14 @@ namespace evoca.am
             methods.loanEarlyRepaymentFunctionality();
         }
         [Test]
-        public void Test2()
+        public void loanRegularRepaymentFunctionalityTest()
         {
-            methods.loanRepaymentFunctionality();
+            methods.loanRefularRepaymentFunctionality();
+        }
+        [Test]
+        public void AccountReplenishmentFunctionalityTest()
+        {
+            methods.AccountReplenishmentFunctionality();
         }
     }
 }

@@ -23,14 +23,14 @@ namespace evoca.am
             Thread.Sleep(1000);
             Click(loanEarlyRepaymentButton);
             SendKey(loanEarlyAggrementInput,Loan.testLoan.LoanContract);
-            Click(continueLoanEarlyPayment);
+            Click(continueLoanEarlyPaymentButton);
             string expectedResult = "Վարկի մայր գումարի վաղաժամկետ մարում";
-            wait.Until(e => e.FindElement(actualResOfLoanEarlyPayment));
+            wait.Until(e => e.FindElement(actualResOfLoanEarlyPaymentButton));
             Thread.Sleep(2000);
-            string actualResult = driver.FindElement(actualResOfLoanEarlyPayment).Text;
+            string actualResult = driver.FindElement(actualResOfLoanEarlyPaymentButton).Text;
             Assert.AreEqual(expectedResult, actualResult);  
         }
-        public void loanRepaymentFunctionality()
+        public void loanRefularRepaymentFunctionality()
         {
             Click(instancePaymentButton);
             Thread.Sleep(10000);
@@ -40,16 +40,12 @@ namespace evoca.am
             Thread.Sleep(1000);
             Click(redularRepaymentButton);
             SendKey(loanRegularAggrementInput, Loan.testLoan.LoanContract);
-            Click(continueLoanRegularPayment);
+            Click(continueLoanRegularPaymentButton);
             string expectedResult = "Հերթական մարում";
-            wait.Until(e => e.FindElement(actualResofLoanRegPayment));
+            wait.Until(e => e.FindElement(actualResofLoanRegPaymentButton));
             Thread.Sleep(2000);
-            string actualResult = driver.FindElement(actualResofLoanRegPayment).Text;
+            string actualResult = driver.FindElement(actualResofLoanRegPaymentButton).Text;
             Assert.AreEqual(expectedResult, actualResult);
-
-
-
-
 
             //    IWebElement listiku = driver.FindElement(listik);
             //    IList<IWebElement> listof = listiku.FindElements(By.TagName("li"));
@@ -63,6 +59,23 @@ namespace evoca.am
             //    //action.DragAndDropToOffset(element);
             //    //action.MoveToLocation(IWebElement)element);
             //    action.ContextClick(element).Perform();
+
+        }
+
+        public void AccountReplenishmentFunctionality()
+        {
+            Click(instancePaymentButton);
+            Thread.Sleep(10000);
+            driver.SwitchTo().Window((driver.WindowHandles[1]));
+            Click(evocabankPaymentButton);
+            Click(accounReplenishmentButton);
+            SendKey(accountInput, Account.testAccount.Number);
+            Click(continueAccountReplenishmentButton);
+            string ExpectedResult = "Հաշվի համալրում";
+            wait.Until(e => e.FindElement(actualResOfAccountReplenishement));
+            Thread.Sleep(2000);
+            string ActualResult = driver.FindElement(actualResOfAccountReplenishement).Text;
+            Assert.AreEqual(ExpectedResult, ActualResult);
 
         }
     }
