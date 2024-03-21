@@ -22,7 +22,7 @@ namespace evoca.am
             Click(loanRepaymentButton);
             Thread.Sleep(1000);
             Click(loanEarlyRepaymentButton);
-            SendKey(loanEarlyAggrementInput,Loan.testLoan.LoanContract);
+            SendKey(loanEarlyAggrementInput,Client.testClinet.Loan);
             Click(continueLoanEarlyPaymentButton);
             string expectedResult = "Վարկի մայր գումարի վաղաժամկետ մարում";
             wait.Until(e => e.FindElement(actualResOfLoanEarlyPaymentButton));
@@ -39,7 +39,7 @@ namespace evoca.am
             Click(loanRepaymentButton);
             Thread.Sleep(1000);
             Click(redularRepaymentButton);
-            SendKey(loanRegularAggrementInput, Loan.testLoan.LoanContract);
+            SendKey(loanRegularAggrementInput, Client.testClinet.Loan);
             Click(continueLoanRegularPaymentButton);
             string expectedResult = "Հերթական մարում";
             wait.Until(e => e.FindElement(actualResofLoanRegPaymentButton));
@@ -69,7 +69,7 @@ namespace evoca.am
             driver.SwitchTo().Window((driver.WindowHandles[1]));
             Click(evocabankPaymentButton);
             Click(accounReplenishmentButton);
-            SendKey(accountInput, Account.testAccount.Number);
+            SendKey(accountInput, Client.testClinet.Account);
             Click(continueAccountReplenishmentButton);
             string ExpectedResult = "Հաշվի համալրում";
             wait.Until(e => e.FindElement(actualResOfAccountReplenishement));
@@ -77,6 +77,21 @@ namespace evoca.am
             string ActualResult = driver.FindElement(actualResOfAccountReplenishement).Text;
             Assert.AreEqual(ExpectedResult, ActualResult);
 
+        }
+        public void CardRelenishementFunctionality() 
+        {
+            Click(instancePaymentButton);
+            Thread.Sleep(10000);
+            driver.SwitchTo().Window((driver.WindowHandles[1]));
+            Click(evocabankPaymentButton);
+            Click(cardReplenishementButton);
+            SendKey(cardInput, Client.testClinet.Card);
+            Click(continueCardReblenishementButton);
+            string ExpectedResult = "Քարտի համալրում";
+            wait.Until(e => e.FindElement(actualResOfCardReplenishement));
+            Thread.Sleep(2000);
+            string ActualResult = driver.FindElement(actualResOfCardReplenishement).Text;
+            Assert.AreEqual(ExpectedResult, ActualResult);
         }
     }
 }

@@ -23,8 +23,7 @@ namespace evoca.am
             methods = new Methods(driver);
             methods.wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
             Url.currentUrl = Url.liveUrl;
-            Loan.testLoan = Loan.syuLoan;
-            Account.testAccount = Account.SyuAccount;
+            Client.testClinet = Client.syuneSargsyan;
             driver.Navigate().GoToUrl(Url.currentUrl.urlValue);
             driver.Manage().Window.Maximize();
         }

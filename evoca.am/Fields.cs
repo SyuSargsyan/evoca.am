@@ -33,6 +33,11 @@ namespace evoca.am
         protected By accountInput = By.CssSelector("#input_3");
         protected By continueAccountReplenishmentButton = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2) > button");
         protected By actualResOfAccountReplenishement = By.CssSelector("body > app-root > div > app-check-provider > div > form > h2");
+        protected By cardReplenishementButton = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div:nth-child(3) > app-provider-item");
+        protected By cardInput = By.CssSelector("#input_4");
+        protected By continueCardReblenishementButton = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2)");
+        protected By actualResOfCardReplenishement = By.CssSelector("body > app-root > div > app-check-provider > div > form > h2");
+        
         protected By mc = By.CssSelector("body > main > div > div > ul > li:nth-child(14) > div > div > a");
         protected By listik = By.CssSelector("#second-level-1 > div > ul");
     }

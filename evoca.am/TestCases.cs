@@ -18,5 +18,10 @@ namespace evoca.am
         {
             methods.AccountReplenishmentFunctionality();
         }
+        [Test]
+        public void CardRepaymentFunctionalityTest()
+        {
+            methods.CardRelenishementFunctionality();
+        }
     }
 }
