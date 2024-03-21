@@ -28,11 +28,11 @@ namespace evoca.am
             driver.Manage().Window.Maximize();
         }
 
-        //[TearDown]
-        //public void tearDownMethod()
-        //{
-        //    driver.Quit();
-        //}
+        [TearDown]
+        public void tearDownMethod()
+        {
+            driver.Quit();
+        }
 
     }
 }

@@ -20,11 +20,14 @@ namespace evoca.am
             driver.SwitchTo().Window((driver.WindowHandles[1]));
             Click(evocabankPaymentButton);
             Click(loanRepaymentButton);
+            Thread.Sleep(1000);
             Click(loanEarlyRepaymentButton);
             SendKey(loanEarlyAggrementInput,Loan.testLoan.LoanContract);
             Click(continueLoanEarlyPayment);
             string expectedResult = "Վարկի մայր գումարի վաղաժամկետ մարում";
-            string actualResult = driver.FindElement(actualResOfLoanPayment).Text;
+            wait.Until(e => e.FindElement(actualResOfLoanEarlyPayment));
+            Thread.Sleep(2000);
+            string actualResult = driver.FindElement(actualResOfLoanEarlyPayment).Text;
             Assert.AreEqual(expectedResult, actualResult);  
         }
         public void loanRepaymentFunctionality()
@@ -34,9 +37,15 @@ namespace evoca.am
             driver.SwitchTo().Window((driver.WindowHandles[1]));
             Click(evocabankPaymentButton);
             Click(loanRepaymentButton);
+            Thread.Sleep(1000);
             Click(redularRepaymentButton);
             SendKey(loanRegularAggrementInput, Loan.testLoan.LoanContract);
             Click(continueLoanRegularPayment);
+            string expectedResult = "Հերթական մարում";
+            wait.Until(e => e.FindElement(actualResofLoanRegPayment));
+            Thread.Sleep(2000);
+            string actualResult = driver.FindElement(actualResofLoanRegPayment).Text;
+            Assert.AreEqual(expectedResult, actualResult);
 
 
 
