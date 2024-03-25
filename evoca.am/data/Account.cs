@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace evoca.am.data
 {
-    public class Account
+    public class Mobile
     {
-        public string Number { get; set; }
+        public string VivaProvider { get; set; }
+        public string UcomeProvider { get; set; }
+        public string TeamsProvider { get; set; }
 
-        public Account(string Number)
+        public Mobile(string VivaProvider = null, string UcomeProvider = null, string TeamsProvider = null)
         {
-            this.Number = Number;
-
+            this.VivaProvider = VivaProvider;
+            this.UcomeProvider = UcomeProvider;
+            this.TeamsProvider = TeamsProvider;
+        
         }
-        public static Account testAccount;
-        public static Account SyuAccount = new Account("1660005971370200");
     }
 }

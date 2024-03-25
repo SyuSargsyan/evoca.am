@@ -23,5 +23,15 @@ namespace evoca.am
         {
             methods.CardRelenishementFunctionality();
         }
+        [Test]
+        public void CardToCardTransactionFunctionalityTest()
+        {
+            methods.CardToCardTransactionFunctionality();
+        }
+        [Test]
+        public void viveMobilePaymentFunctionalityTest()
+        {
+            methods.viveMobilePaymentFunctionality();
+        }
     }
 }

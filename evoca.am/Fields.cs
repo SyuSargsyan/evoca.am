@@ -37,7 +37,26 @@ namespace evoca.am
         protected By cardInput = By.CssSelector("#input_4");
         protected By continueCardReblenishementButton = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2)");
         protected By actualResOfCardReplenishement = By.CssSelector("body > app-root > div > app-check-provider > div > form > h2");
-        
+        protected By cardTocardTransactionButton = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div:nth-child(2) > app-provider-item > div");
+        protected By cardTocardTransactionInAM = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div > app-provider-item > div");
+        protected By currencyDropdownForC2C = By.Id("input_741");
+        protected By messageForC2C = By.CssSelector("#input_742");
+        protected By continueC2CForAM = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2)");
+        protected By payC2CButton = By.CssSelector("body > app-root > div > app-check-provider > div > form > div > button");
+        protected By arcaPageForC2C = By.CssSelector("#formContainer > div");
+        protected By mobileButton = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div:nth-child(4) > app-provider-item > div");
+        protected By vivaMobileButton = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div:nth-child(2) > app-provider-item > div > div");
+        protected By vivaMobileInput = By.CssSelector("#input_17");
+        protected By continueVivaPaymentButton = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2) > button");
+        protected By payVivaPaymentButton = By.CssSelector("body > app-root > div > app-check-provider > div > form > div > button");
+        protected By arcaViva = By.Id("formPayment");
+        protected By uComMobileButton = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div:nth-child(3) > app-provider-item > div");
+        protected By uComMobileInput = By.CssSelector("#input_16");
+        protected By uComContinueButton = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2) > button");
+        protected By teamsMobileButton = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div:nth-child(1) > app-provider-item > div > div");
+        protected By teamsMobileInput = By.CssSelector("#input_12");
+        protected By teamsContinueButton = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2) > button");
+
         protected By mc = By.CssSelector("body > main > div > div > ul > li:nth-child(14) > div > div > a");
         protected By listik = By.CssSelector("#second-level-1 > div > ul");
     }

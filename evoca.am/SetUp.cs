@@ -23,16 +23,16 @@ namespace evoca.am
             methods = new Methods(driver);
             methods.wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
             Url.currentUrl = Url.liveUrl;
-            Client.testClinet = Client.syuneSargsyan;
+            Client.testClinet = Client.SyuneSargsyan;
             driver.Navigate().GoToUrl(Url.currentUrl.urlValue);
             driver.Manage().Window.Maximize();
         }
 
-        [TearDown]
-        public void tearDownMethod()
-        {
-            driver.Quit();
-        }
+        //[TearDown]
+        //public void tearDownMethod()
+        //{
+        //    driver.Quit();
+        //}
 
     }
 }
