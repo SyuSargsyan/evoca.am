@@ -59,7 +59,6 @@ namespace evoca.am
             //    //action.DragAndDropToOffset(element);
             //    //action.MoveToLocation(IWebElement)element);
             //    action.ContextClick(element).Perform();
-
         }
 
         public void AccountReplenishmentFunctionality()
@@ -121,14 +120,10 @@ namespace evoca.am
             SendKey(vivaMobileInput, Client.SyuneSargsyan.Mobile.VivaProvider);
             Click(continueVivaPaymentButton);
             Click(payVivaPaymentButton);
+            Thread.Sleep(5000);
             driver.SwitchTo().Window(driver.WindowHandles[2]);
             wait.Until(e => e.FindElement(arcaViva));
             Assert.IsTrue(driver.FindElement(arcaViva).Displayed);
-
-
-
-
-
         }
     }
 }

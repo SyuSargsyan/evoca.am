@@ -34,7 +34,7 @@ namespace evoca.am.data
             
         }
         public static Client testClinet;
-        public static Client SyuneSargsyan = new Client("TV275480", "1660005971370200", "5263920001035153", viva:"094595767");
+        public static Client SyuneSargsyan = new Client("TV275480", "1660005971370200", "5263920001035153", viva:"094595767", ucom: "055545455", team: "091197907");
 
     }
 }
