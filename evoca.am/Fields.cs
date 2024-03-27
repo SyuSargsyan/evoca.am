@@ -53,9 +53,11 @@ namespace evoca.am
         protected By uComMobileButton = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div:nth-child(3) > app-provider-item > div");
         protected By uComMobileInput = By.CssSelector("#input_16");
         protected By uComContinueButton = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2) > button");
+        protected By payUcomPaymentButton = By.CssSelector("body > app-root > div > app-check-provider > div > form > div > button");
         protected By teamsMobileButton = By.CssSelector("body > app-root > div > app-providers-home > app-providers > div > div.flex-box > div:nth-child(1) > app-provider-item > div > div");
         protected By teamsMobileInput = By.CssSelector("#input_12");
         protected By teamsContinueButton = By.CssSelector("body > app-root > div > app-provider > div > div > form > div.form-container > div:nth-child(2) > button");
+        protected By payTeamPaymentButton = By.CssSelector("body > app-root > div > app-check-provider > div > form > div > button");
 
         protected By mc = By.CssSelector("body > main > div > div > ul > li:nth-child(14) > div > div > a");
         protected By listik = By.CssSelector("#second-level-1 > div > ul");

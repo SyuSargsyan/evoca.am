@@ -22,13 +22,13 @@ namespace evoca.am
             Click(loanRepaymentButton);
             Thread.Sleep(1000);
             Click(loanEarlyRepaymentButton);
-            SendKey(loanEarlyAggrementInput,Client.testClinet.Loan);
+            SendKey(loanEarlyAggrementInput, Client.testClinet.Loan);
             Click(continueLoanEarlyPaymentButton);
             string expectedResult = "Վարկի մայր գումարի վաղաժամկետ մարում";
             wait.Until(e => e.FindElement(actualResOfLoanEarlyPaymentButton));
             Thread.Sleep(2000);
             string actualResult = driver.FindElement(actualResOfLoanEarlyPaymentButton).Text;
-            Assert.AreEqual(expectedResult, actualResult);  
+            Assert.AreEqual(expectedResult, actualResult);
         }
         public void loanRefularRepaymentFunctionality()
         {
@@ -76,7 +76,7 @@ namespace evoca.am
             string ActualResult = driver.FindElement(actualResOfAccountReplenishement).Text;
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
-        public void CardRelenishementFunctionality() 
+        public void CardRelenishementFunctionality()
         {
             Click(instancePaymentButton);
             Thread.Sleep(10000);
@@ -91,7 +91,7 @@ namespace evoca.am
             string ActualResult = driver.FindElement(actualResOfCardReplenishement).Text;
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
-        public void CardToCardTransactionFunctionality ()
+        public void CardToCardTransactionFunctionality()
         {
             Click(instancePaymentButton);
             Thread.Sleep(10000);
@@ -105,19 +105,19 @@ namespace evoca.am
             ClickElement(usd);
             Click(continueC2CForAM);
             Click(payC2CButton);
-            Thread.Sleep(3000); 
+            Thread.Sleep(3000);
             driver.SwitchTo().Window(driver.WindowHandles[2]);
             wait.Until(e => e.FindElement(arcaPageForC2C));
             Assert.IsTrue(driver.FindElement(arcaPageForC2C).Displayed);
         }
-        public void viveMobilePaymentFunctionality ()
+        public void ViveMobilePaymentFunctionality()
         {
             Click(instancePaymentButton);
             Thread.Sleep(10000);
             driver.SwitchTo().Window((driver.WindowHandles[1]));
             Click(mobileButton);
             Click(vivaMobileButton);
-            SendKey(vivaMobileInput, Client.SyuneSargsyan.Mobile.VivaProvider);
+            SendKey(vivaMobileInput, Client.testClinet.Mobile.VivaProvider);
             Click(continueVivaPaymentButton);
             Click(payVivaPaymentButton);
             Thread.Sleep(5000);
@@ -125,5 +125,36 @@ namespace evoca.am
             wait.Until(e => e.FindElement(arcaViva));
             Assert.IsTrue(driver.FindElement(arcaViva).Displayed);
         }
+        public void UComMobilePaymentFunctionality()
+        {
+            Click(instancePaymentButton);
+            Thread.Sleep(10000);
+            driver.SwitchTo().Window((driver.WindowHandles[1]));
+            Click(mobileButton);
+            Click(uComMobileButton);
+            SendKey(uComMobileInput, Client.testClinet.Mobile.UcomeProvider);
+            Click(uComContinueButton);
+            Click(payUcomPaymentButton);
+            Thread.Sleep(5000);
+            driver.SwitchTo().Window(driver.WindowHandles[2]);
+            wait.Until(e => e.FindElement(arcaViva));
+            Assert.IsTrue(driver.FindElement(arcaViva).Displayed);
+        }
+        public void TeamMobilePaymentFunctionality()
+        {
+            Click(instancePaymentButton);
+            Thread.Sleep(10000);
+            driver.SwitchTo().Window((driver.WindowHandles[1]));
+            Click(mobileButton);
+            Click(teamsMobileButton);
+            SendKey(teamsMobileInput, Client.testClinet.Mobile.TeamsProvider);
+            Click(teamsContinueButton);
+            Click(payTeamPaymentButton);
+            Thread.Sleep(5000);
+            driver.SwitchTo().Window(driver.WindowHandles[2]);
+            wait.Until(e => e.FindElement(arcaViva));
+            Assert.IsTrue(driver.FindElement(arcaViva).Displayed);
+        }
     }
 }
+

@@ -2,7 +2,7 @@ namespace evoca.am
 {
     internal class Tests : SetUp
     { 
-
+        //EvocaPayment
         [Test]
         public void loanEarlyRepaymentFunctionalityTest()
         {
@@ -19,19 +19,31 @@ namespace evoca.am
             methods.AccountReplenishmentFunctionality();
         }
         [Test]
-        public void CardRepaymentFunctionalityTest()
+        public void CardReplenishementFunctionalityTest()
         {
             methods.CardRelenishementFunctionality();
         }
+        //C2C transfers
         [Test]
         public void CardToCardTransactionFunctionalityTest()
         {
             methods.CardToCardTransactionFunctionality();
         }
+        //Utility payments
         [Test]
         public void viveMobilePaymentFunctionalityTest()
         {
-            methods.viveMobilePaymentFunctionality();
+            methods.ViveMobilePaymentFunctionality();
+        }
+        [Test]
+        public void uComMobilePaymentFunctionalityTest()
+        {
+            methods.UComMobilePaymentFunctionality();
+        }
+        [Test]
+        public void TeamMobilePaymentFunctionalityTest()
+        {
+            methods.TeamMobilePaymentFunctionality();
         }
     }
 }
